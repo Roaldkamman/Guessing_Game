@@ -97,6 +97,14 @@ button {
   background-color: #76CE82;
 }
 
+/* can be applied to any element with Javascript to fade it out and hide it. */
+.hide {
+  display: none;
+  opacity: 0;
+  overflow: hidden;
+  transition: 1s ease-in-out;
+}
+
 /* Keyboard */
 
 .keyrow {

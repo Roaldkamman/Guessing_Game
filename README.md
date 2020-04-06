@@ -1,2 +1,47 @@
-# Project7
- my 7th project, (6th treehouse project) 
+# Project 7 JavaScript Game Show app. 
+
+## This project let's you play a phrase guessing game!
+
+
+## INFO/ABOUT
+
+The main component to making this project successful will be JavaScript. In this project I chose not to use JQuery and instead display regular JavaScript ability. 
+
+Full disclosure: A CSS template was provided but I will still provide some custom CSS. 
+
+As always this is a mobile-first responsive design.
+
+I will document my progress, tasks completed and problem solving when I run into them. I will also leave notes where applicable. 
+
+
+### are you interested in hiring a Front End Web Developer? Email me at: r.j.kamman@gmail.com
+
+
+
+
+# Activity log: 
+
+### date format: mm/dd/yyyy
+
+### Sunday 04/05/2020:
+
+* * All activities in order of completion. 
+
+- created global variables.
+
+- created a CSS class and styling for a transition that would hide the starting overlay.
+
+- added an event listener with a click handler to the start button with a function that adds the .hide class to the overlay element when the button is clicked creating a nice user experience.     
+
+- created an array to hold all the phrases you can guess, and added the phrases into the array. 
+
+- documented JavaScript and CSS changes using comments. 
+
+- GitHub Commit. 
+End of activities 04/05/2020.
+
+
+### are you interested in hiring a Front End Web Developer? Email me at: r.j.kamman@gmail.com
+
+
+
