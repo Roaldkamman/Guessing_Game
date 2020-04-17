@@ -41,6 +41,25 @@ I will document my progress, tasks completed and problem solving when I run into
 End of activities 04/05/2020.
 
 
+### Friday 04/10/2020:
+
+* * All activities in order of completion. 
+
+- created function that takes any array, grabs a random item from the array and splits the characters of that array into a new array and returns it. 
+
+- created function that takes the random phrase selected and displays it in the DOM. 
+
+- tested functionality so far. Didn't run into any errors.
+
+- created function that checks the letter clicked against the phrase to see if it appears. 
+End of activities Friday 04/10/2020.
+
+
+### Monday 04/13/2020:
+
+
+
+
 ### are you interested in hiring a Front End Web Developer? Email me at: r.j.kamman@gmail.com
 
 
