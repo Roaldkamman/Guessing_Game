@@ -51,13 +51,23 @@ End of activities 04/05/2020.
 
 - tested functionality so far. Didn't run into any errors.
 
-- created function that checks the letter clicked against the phrase to see if it appears. 
+- created checkLetter function that checks the letter clicked against the phrase to see if it appears. 
 End of activities Friday 04/10/2020.
 
 
-### Monday 04/13/2020:
+### Friday 04/17/2020:
 
+* * All activities in order of completion. 
 
+- created event listener that on keyboard click passes the clicked button to the checkLetter function. 
+
+- overlay was bugged and had to re-do the hide functionality. ID was overwriting .hide class. Had to remove transition. (note to add transition in later)
+
+- debugged several issues within created functions that prevented game from functioning correctly. 
+
+- documented javascript and readme. 
+
+- commit functioning version.
 
 
 ### are you interested in hiring a Front End Web Developer? Email me at: r.j.kamman@gmail.com

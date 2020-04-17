@@ -3,7 +3,7 @@ const qwerty = document.querySelector('#qwerty');
 const phrase = document.querySelector('#phrase ul');
 const overlay = document.querySelector('#overlay');
 const startButton = document.querySelector('.btn__reset');
-const tries = document.querySelector('.tries');
+const tries = document.querySelector('#scoreboard ol');
 
 //global let variables
 let missed = 0;
@@ -20,8 +20,7 @@ const phrases = [
 
 //event listener to the “Start Game” button to hide the start screen overlay
 startButton.addEventListener('click', () => {
-    overlay.classList.add('hide');
-    startButton.classList.add('hide');
+    overlay.style.display = 'none';
 
     let phraseArray = getRandomPhraseAsArray(phrases);
     addPhraseToDisplay(phraseArray); 
@@ -43,42 +42,48 @@ function addPhraseToDisplay(arr) {
         const li = document.createElement('li');
         const char = arr[i];
         li.textContent = char;
-
+    
+        // adds classes according to character type for css styling
         if (li.textContent === ' ') {
             li.className = 'space';
         } else {
             li.className = 'letter';
         }
-
+        // puts characters in the DOM
         phrase.append(li);
     };
 }
 
+//function that checks the clicked letter against the phrase displayed in the DOM.
 function checkLetter(key) {
-    let letterArr = document.querySelector('.letter');
     let response = null;
+    //querySelector specifically for li with .letter class
+    let letterArr = phrase.querySelectorAll('li.letter');
     for (i = 0; i < letterArr.length; i += 1) {
-        const letter = letterArr[i].text().toLowerCase();
+        const letter = letterArr[i].textContent.toLowerCase();
         if (letter === key.textContent) {
-            letter.addClass('show'); //might need to change to letter[i].addClass('show)
-            response = letter; //maybe letter[i]
+            //shows the clicked letter in the phrase
+            letterArr[i].classList.add('show'); 
+            response = letter;
         }
     }
-
     return response; 
 }
 
+// adds event listener to keyboard buttons and uses the checkletter function. 
 qwerty.addEventListener('click', (e) => {
     console.log(e.target);
     if (e.target.tagName === 'BUTTON') {
-        e.target.addClass('chosen');
+        //adds chosen CSS styling to button and disables button
+        e.target.classList.add('chosen');
         e.target.disabled = true;
 
         const letterFound = checkLetter(e.target);
-
+        
+        // keeps track of wrong guesses and removes one heart for each wrong guess
         if (letterFound === null) {
             missed += 1;
-            tries[0].addClass('hide');
+            tries.removeChild(tries.children[0]);
         }
     }
 });
