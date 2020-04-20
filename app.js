@@ -1,29 +1,87 @@
+//create counters that count how many times they won and lost. 
+
 //global constant variables
 const qwerty = document.querySelector('#qwerty');
 const phrase = document.querySelector('#phrase ul');
 const overlay = document.querySelector('#overlay');
 const startButton = document.querySelector('.btn__reset');
 const tries = document.querySelector('#scoreboard ol');
+const hearts = document.querySelectorAll('#scoreboard li');
 
 //global let variables
 let missed = 0;
+let overlayMessage = document.querySelector('.title');
 
 //global constant arrays
 const phrases = [
-    "Ctrl Shift I",
-    "Developer Tools",
-    "Mobile First Design",
-    "Good Code is Simple Code",
-    "DRY Dont Repeat Yourself",
-    "Good Documentation is Essential"
+    'Ctrl Shift I',
+    'Developer Tools',
+    'Handshaking error',
+    'Internal server error',
+    'Gateway timeout',
+    'Service unavailable',
+    'File not found',
+    'Access denied',
+    'Not enough memory',
+    'Low disk space',
+    'Invalid password',
+    'Device not ready',
+    'Bad file type',
+    'File too large'
 ];
+
+function clearOverlay() {
+    //not completely sure what the syntax is for putting them together outside of Jquery. This isn't DRY but I will make an exception to save time. 
+    overlay.classList.remove('start');
+    overlay.classList.remove('win');
+    overlay.classList.remove('lose');
+}
+
+// checks both if you met the winning and losing conditions and changes the DOM to reflect the right condition.
+function checkWin() {
+    let letters = document.getElementsByClassName('letter').length;
+    let showing = document.getElementsByClassName('show').length;
+    if (letters === showing) {
+        clearOverlay();
+        overlay.classList.add('win');
+        overlayMessage.textContent = 'Yes!, You won!';
+        startButton.textContent = 'Play Again';
+        overlay.style.display = 'flex';
+    } 
+    else if (missed === 5) {
+        clearOverlay();
+        overlay.classList.add('lose');
+        overlayMessage.textContent = 'Oh no!, You lost.'
+        startButton.textContent = 'Try Again';
+        overlay.style.display = 'flex';
+    }
+}
 
 //event listener to the “Start Game” button to hide the start screen overlay
 startButton.addEventListener('click', () => {
-    overlay.style.display = 'none';
-
     let phraseArray = getRandomPhraseAsArray(phrases);
-    addPhraseToDisplay(phraseArray); 
+    if (startButton.textContent === 'Start Game') {
+        overlay.style.display = 'none';
+        addPhraseToDisplay(phraseArray);
+    } 
+    //play again button that resets the necessary elements in the DOM.
+    else if (startButton.textContent === 'Play Again' || startButton.textContent === 'Try Again') {
+        while(phrase.firstElementChild != null) {
+            phrase.removeChild(phrase.firstElementChild);
+        }
+        overlay.style.display = 'none';
+        addPhraseToDisplay(phraseArray);
+        const keyButtons = document.querySelectorAll('#qwerty button');
+        for (let i = 0; i < keyButtons.length; i += 1) {
+            keyButtons[i].classList.remove('chosen');
+            keyButtons[i].disabled = false;
+        }
+        missed = 0;
+        for (i = 0; i < 5; i += 1) {
+            let heart = hearts[i];
+            scoreboard.appendChild(heart);
+        }
+    }
 });
 
 
@@ -86,6 +144,7 @@ qwerty.addEventListener('click', (e) => {
             tries.removeChild(tries.children[0]);
         }
     }
+    checkWin();
 });
 
 

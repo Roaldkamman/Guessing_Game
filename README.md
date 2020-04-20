@@ -68,6 +68,20 @@ End of activities Friday 04/10/2020.
 - documented javascript and readme. 
 
 - commit functioning version.
+End of activities Friday 04/17/2020.
+
+### Monday 04/20/2020:
+
+* * All activities in order of completion. 
+- created checkWin function that checks for loss or win conditions and applies the right situation accordingly.
+
+- created reset functionality so that you can play multiple games.
+
+- finished most of the functionality except transitions. 
+
+- documented code. 
+
+- commit fully functional version1. 
 
 
 ### are you interested in hiring a Front End Web Developer? Email me at: r.j.kamman@gmail.com
