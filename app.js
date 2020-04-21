@@ -7,6 +7,7 @@ const overlay = document.querySelector('#overlay');
 const startButton = document.querySelector('.btn__reset');
 const tries = document.querySelector('#scoreboard ol');
 const hearts = document.querySelectorAll('#scoreboard li');
+const overlayHidden = document.getElementById('#overlayHideTransition')
 
 //global let variables
 let missed = 0;
@@ -17,7 +18,7 @@ const phrases = [
     'Ctrl Shift I',
     'Developer Tools',
     'Handshaking error',
-    'Internal server error',
+    'Internal server error', 
     'Gateway timeout',
     'Service unavailable',
     'File not found',
@@ -61,7 +62,8 @@ function checkWin() {
 startButton.addEventListener('click', () => {
     let phraseArray = getRandomPhraseAsArray(phrases);
     if (startButton.textContent === 'Start Game') {
-        overlay.style.display = 'none';
+        overlay.id = 'overlayHideTransition';
+        //overlay.style.display = 'none';
         addPhraseToDisplay(phraseArray);
     } 
     //play again button that resets the necessary elements in the DOM.

@@ -130,6 +130,7 @@ button {
 /* Overlay */
 
 #overlay {
+  transition: 1s ease-in-out;
   display: flex;
   flex-direction: column;
   position: fixed;
@@ -140,6 +141,24 @@ button {
   left: 0;
   right: 0;
   border-radius: 5px;
+}
+
+#overlayHideTransition {
+  transition: 1s ease-in-out;
+  display: none;
+  flex-direction: column;
+  position: fixed;
+  color: #FFFFFF;
+  justify-content: center;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  border-radius: 5px;
+}
+
+#overlayShowTransition {
+  
 }
 
 .title {
