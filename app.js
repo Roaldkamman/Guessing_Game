@@ -7,9 +7,13 @@ const overlay = document.querySelector('#overlay');
 const startButton = document.querySelector('.btn__reset');
 const tries = document.querySelector('#scoreboard ol');
 const hearts = document.querySelectorAll('#scoreboard li');
-const overlayHidden = document.getElementById('#overlayHideTransition')
+const winLoss = document.querySelector('.winLossCounter');
+const $heart = $('.tries img');
+const $overlay = $('#overlay');
 
 //global let variables
+let won = 0;
+let lost = 0;
 let missed = 0;
 let overlayMessage = document.querySelector('.title');
 
@@ -43,18 +47,22 @@ function checkWin() {
     let letters = document.getElementsByClassName('letter').length;
     let showing = document.getElementsByClassName('show').length;
     if (letters === showing) {
+        won += 1;
+        winLoss.textContent = "Rounds you won: " + won + ", Rounds you lost: " + lost;
         clearOverlay();
         overlay.classList.add('win');
         overlayMessage.textContent = 'Yes!, You won!';
         startButton.textContent = 'Play Again';
-        overlay.style.display = 'flex';
+        $overlay.delay(1000).show('clip');
     } 
     else if (missed === 5) {
+        lost += 1;  
+        winLoss.textContent = "Rounds you won: " + won + ", Rounds you lost: " + lost;
         clearOverlay();
         overlay.classList.add('lose');
-        overlayMessage.textContent = 'Oh no!, You lost.'
+        overlayMessage.textContent = 'Oh no! You lost'
         startButton.textContent = 'Try Again';
-        overlay.style.display = 'flex';
+        $overlay.delay(1000).show('clip');
     }
 }
 
@@ -62,16 +70,16 @@ function checkWin() {
 startButton.addEventListener('click', () => {
     let phraseArray = getRandomPhraseAsArray(phrases);
     if (startButton.textContent === 'Start Game') {
-        overlay.id = 'overlayHideTransition';
-        //overlay.style.display = 'none';
+        $overlay.hide('clip');
         addPhraseToDisplay(phraseArray);
     } 
+
     //play again button that resets the necessary elements in the DOM.
     else if (startButton.textContent === 'Play Again' || startButton.textContent === 'Try Again') {
         while(phrase.firstElementChild != null) {
             phrase.removeChild(phrase.firstElementChild);
         }
-        overlay.style.display = 'none';
+        $overlay.hide('clip');
         addPhraseToDisplay(phraseArray);
         const keyButtons = document.querySelectorAll('#qwerty button');
         for (let i = 0; i < keyButtons.length; i += 1) {
@@ -79,10 +87,7 @@ startButton.addEventListener('click', () => {
             keyButtons[i].disabled = false;
         }
         missed = 0;
-        for (i = 0; i < 5; i += 1) {
-            let heart = hearts[i];
-            scoreboard.appendChild(heart);
-        }
+        $heart.attr('src', 'images/liveHeart.png');
     }
 });
 
@@ -142,8 +147,8 @@ qwerty.addEventListener('click', (e) => {
         
         // keeps track of wrong guesses and removes one heart for each wrong guess
         if (letterFound === null) {
+            $heart.eq(missed).attr('src', 'images/lostHeart.png');
             missed += 1;
-            tries.removeChild(tries.children[0]);
         }
     }
     checkWin();

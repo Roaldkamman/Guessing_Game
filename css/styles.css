@@ -1,5 +1,5 @@
 /* Main styles */
-@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,700&Roboto:300');
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@500&display=swap');
 
 /* Variables */
 
@@ -22,6 +22,11 @@
   box-sizing: border-box;
 }
 
+p {
+  font-size: var(--font-size-medium);
+  font-family: 'Oswald', sans-serif;
+}
+
 body {
   justify-content: space-evenly;
   flex-direction: column;
@@ -37,15 +42,15 @@ li, ol, ul {
 h2 {
   margin: 0;
   text-transform: uppercase;
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'Oswald', sans-serif;
   font-size: var(--font-size-large);
   margin: 0;
 }
 
 button {
-  margin: 6px;
+  margin: 10px;
   border: 1px solid transparent;
-  padding: .5rem 1rem;
+  padding: .7rem 1.2rem;
   color: var(--color-keys);
   font-size: var(--font-size-medium);
   background-color: var(--color-keys-light);
@@ -53,6 +58,19 @@ button {
   -webkit-transition: var(--transition);
   -o-transition: var(--transition);
   transition: var(--transition);
+}
+
+button:hover {
+  cursor: pointer;
+  transition: .5s ease-in-out; 
+  transform: scale(1.1);
+  box-shadow: -5px 15px 10px 0 rgba(0, 0, 51, 0.7);
+}
+
+button:disabled {
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
 }
 
 .main-container {
@@ -79,10 +97,12 @@ button {
 
 .letter {
   font-size: var(--font-size-medium);
+  font-family: 'Oswald', sans-serif;
   height: 65px;
   width: 65px;
   padding: 20px 1px 0 1px;
   margin-right: 2px;
+  margin-bottom: 10px;
   color: transparent;
   background: var(--color-neutral-light);
   border-radius: 5px;
@@ -92,9 +112,27 @@ button {
   width: 15px;
 }
 
+@keyframes rotateScale {
+  0% {transform: rotate(0deg);}
+  10% {transform: rotate(5deg);}
+  10% {transform: scale(2);}
+  20% {transform: rotate(-5deg);}
+  30% {transform: rotate(5deg);}
+  40% {transform: rotate(-5deg);}
+  50% {transform: rotate(5deg);}
+  60% {transform: rotate(-5deg);}
+  70% {transform: rotate(5deg);}
+  80% {transform: rotate(-5deg);}
+  80% {transform: scale(1);}
+  90% {transform: rotate(5deg);}
+  100% {transform: rotate(0deg);}
+}
+
 .show {
   color: #000;
   background-color: #76CE82;
+  animation-name: rotateScale;
+  animation-duration: 0.7s;
 }
 
 /* can be applied to any element with Javascript to fade it out and hide it. */
@@ -120,17 +158,24 @@ button {
 }
 
 .btn__reset {
-  padding: 8px;
+  padding: 15px;
+  font-family: 'Oswald', sans-serif;
   margin: 50px auto;
   background: #FFFFFF;
   border-radius: 5px;
   font-size: var(--font-size-medium);
 }
 
+.btn__reset:hover {
+  cursor: pointer;
+  transition: .5s ease-in-out; 
+  transform: scale(1.6);
+  box-shadow: -5px 15px 10px 0 rgba(0, 0, 51, 0.7);
+}
+
 /* Overlay */
 
 #overlay {
-  transition: 1s ease-in-out;
   display: flex;
   flex-direction: column;
   position: fixed;
@@ -141,24 +186,6 @@ button {
   left: 0;
   right: 0;
   border-radius: 5px;
-}
-
-#overlayHideTransition {
-  transition: 1s ease-in-out;
-  display: none;
-  flex-direction: column;
-  position: fixed;
-  color: #FFFFFF;
-  justify-content: center;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  border-radius: 5px;
-}
-
-#overlayShowTransition {
-  
 }
 
 .title {
@@ -187,4 +214,9 @@ button {
 
 .lose a {
   color: var(--color-lose);
+}
+
+.tries:hover {
+  transition: .5s ease-in-out; 
+  transform: scale(1.1);
 }

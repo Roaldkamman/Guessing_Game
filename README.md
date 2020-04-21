@@ -5,11 +5,11 @@
 
 ## INFO/ABOUT
 
-The main component to making this project successful will be JavaScript. In this project I chose not to use JQuery and instead display regular JavaScript ability. 
+The main component to making this project successful will be JavaScript. In this project I chose to minimally use Jquery and practice mostly plain JavaScript to challenge myself.
 
 Full disclosure: A CSS template was provided but I will still provide some custom CSS. 
 
-As always this is a mobile-first responsive design.
+This is an exception to the mobile-first design rule that I prefer to apply to myself. The CSS template provided by my study partners from TeamTreeHouse TechDegree is NOT mobile-first and will break on smallers screens.
 
 I will document my progress, tasks completed and problem solving when I run into them. I will also leave notes where applicable. 
 
