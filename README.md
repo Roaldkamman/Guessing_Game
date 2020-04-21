@@ -73,6 +73,7 @@ End of activities Friday 04/17/2020.
 ### Monday 04/20/2020:
 
 * * All activities in order of completion. 
+
 - created checkWin function that checks for loss or win conditions and applies the right situation accordingly.
 
 - created reset functionality so that you can play multiple games.
@@ -82,6 +83,28 @@ End of activities Friday 04/17/2020.
 - documented code. 
 
 - commit fully functional version1. 
+End of activities Monday 04/20/2020.
+
+### Tuesday 04/21/2020:
+
+* * All activities in order of completion. 
+
+- Edited most of the button and text CSS to be more appealing. 
+
+- Made the website more responsive so it wont break on medium sized screens. It will still look awkward on small screens. 
+
+- Imported JQuery to use minimally with transitions. 
+
+- added transitions. 
+
+- Created functionality that keeps track of games lost/won if you don't reset the page. 
+
+- Documented everything. 
+
+- Commit final version. 
+End of project. 
+
+
 
 
 ### are you interested in hiring a Front End Web Developer? Email me at: r.j.kamman@gmail.com
