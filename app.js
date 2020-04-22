@@ -21,18 +21,18 @@ let overlayMessage = document.querySelector('.title');
 const phrases = [
     'Ctrl Shift I',
     'Developer Tools',
-    'Handshaking error',
-    'Internal server error', 
-    'Gateway timeout',
-    'Service unavailable',
-    'File not found',
-    'Access denied',
-    'Not enough memory',
-    'Low disk space',
-    'Invalid password',
-    'Device not ready',
-    'Bad file type',
-    'File too large'
+    'Handshaking Error',
+    'Internal Server Error', 
+    'Gateway Timeout',
+    'Service Unavailable',
+    'File Not Found',
+    'Access Denied',
+    'Not Enough Memory',
+    'Low Disk Space',
+    'Invalid Password',
+    'Device Not Ready',
+    'Bad File Type',
+    'File Too Large'
 ];
 
 function clearOverlay() {
