@@ -11,6 +11,11 @@ Full disclosure: A CSS template was provided but I will still provide some custo
 
 This is an exception to the mobile-first design rule that I prefer to apply to myself. The CSS template provided by my study partners from TeamTreeHouse TechDegree is NOT mobile-first and will break on smallers screens.
 
+- Site was tested in Chrome for Windows, and FireFox for Windows. 
+- HTML validated via the W3C Markup Validation Service.
+- CSS validated via the W3C CSS Validation Service.
+- JS checked via JS Hint and JS console.
+
 I will document my progress, tasks completed and problem solving when I run into them. I will also leave notes where applicable. 
 
 
@@ -20,10 +25,6 @@ I will document my progress, tasks completed and problem solving when I run into
 
 
 # Activity log: 
-
-### date format: mm/dd/yyyy
-
-### Sunday 04/05/2020:
 
 * * All activities in order of completion. 
 
@@ -38,12 +39,6 @@ I will document my progress, tasks completed and problem solving when I run into
 - documented JavaScript and CSS changes using comments. 
 
 - GitHub Commit. 
-End of activities 04/05/2020.
-
-
-### Friday 04/10/2020:
-
-* * All activities in order of completion. 
 
 - created function that takes any array, grabs a random item from the array and splits the characters of that array into a new array and returns it. 
 
@@ -52,12 +47,6 @@ End of activities 04/05/2020.
 - tested functionality so far. Didn't run into any errors.
 
 - created checkLetter function that checks the letter clicked against the phrase to see if it appears. 
-End of activities Friday 04/10/2020.
-
-
-### Friday 04/17/2020:
-
-* * All activities in order of completion. 
 
 - created event listener that on keyboard click passes the clicked button to the checkLetter function. 
 
@@ -68,11 +57,6 @@ End of activities Friday 04/10/2020.
 - documented javascript and readme. 
 
 - commit functioning version.
-End of activities Friday 04/17/2020.
-
-### Monday 04/20/2020:
-
-* * All activities in order of completion. 
 
 - created checkWin function that checks for loss or win conditions and applies the right situation accordingly.
 
@@ -84,10 +68,6 @@ End of activities Friday 04/17/2020.
 
 - commit fully functional version1. 
 End of activities Monday 04/20/2020.
-
-### Tuesday 04/21/2020:
-
-* * All activities in order of completion. 
 
 - Edited most of the button and text CSS to be more appealing. 
 
@@ -103,9 +83,6 @@ End of activities Monday 04/20/2020.
 
 - Commit final version. 
 End of project. 
-
-
-
 
 ### are you interested in hiring a Front End Web Developer? Email me at: r.j.kamman@gmail.com
 

@@ -54,7 +54,7 @@ function checkWin() {
         overlayMessage.textContent = 'Yes!, You won!';
         startButton.textContent = 'Play Again';
         $overlay.delay(1000).show('clip');
-    } 
+    }   
     else if (missed === 5) {
         lost += 1;  
         winLoss.textContent = "Rounds you won: " + won + ", Rounds you lost: " + lost;
